@@ -12,6 +12,7 @@ import Vue from "vue/dist/vue.esm";
 import axios from "axios";
 import TurbolinksAdapter from "vue-turbolinks";
 import { InertiaApp } from "@inertiajs/inertia-vue";
+import '../../assets/stylesheets/global.css'
 Vue.use(TurbolinksAdapter);
 Vue.use(InertiaApp);
 
