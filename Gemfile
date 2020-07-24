@@ -6,6 +6,8 @@ ruby '2.6.5'
 gem 'devise'
 gem 'inertia_rails'
 
+gem 'launchy'
+
 # To automate start of rails server and webpack
 gem 'foreman'
 

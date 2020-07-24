@@ -1,2 +1,2 @@
 webpack: ./bin/webpack-dev-server
-rails: rails s
+rails: rails s -p 8081
