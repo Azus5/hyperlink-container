@@ -3,7 +3,7 @@
     <h1 class="site-name">HYPERLINK-CONTAINER</h1>
     <div class="form-login">
       <h2>Sign in to proceed</h2>
-      <form @submit.prevent>
+      <form @submit.prevent="handleLogin">
         <div class="input">
           <img src="email.svg" alt="emailIcon" class="input-icon" />
           <input type="email" name="user-email" placeholder="E-mail" v-model="email" required />
@@ -26,15 +26,34 @@
 </template>
 
 <script>
+import axios from "axios";
 // import EmailSVG from "../../../../public/email.svg";
 
 // console.log(EmailSVG);
 
 export default {
   name: "login",
-  data: {
-    email: "",
-    password: "",
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    handleLogin() {
+      let login_data = {
+        user: {
+          email: this.email,
+          password: this.password,
+        },
+      };
+
+      axios
+        .post("http://localhost:3000/users/sign_in", login_data)
+        .then((resp) => {
+          alert("logged");
+        });
+    },
   },
 };
 </script>

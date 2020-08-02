@@ -10,14 +10,10 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    self.resource = warden.authenticate!(auth_options)
-    set_flash_message!(:notice, :signed_in)
-    sign_in(resource_name, resource)
-    if !session[:return_to].blank?
-      render json: { logged: false }
-    else
-      render json: { logged: true, user: current_user }
-    end
+    user = User.find_by(email: params[:user][:email])
+    return unless user.valid_password?(params[:user][:password])
+
+    sign_in user
   end
 
   # DELETE /resource/sign_out
