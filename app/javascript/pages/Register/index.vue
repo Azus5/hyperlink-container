@@ -35,7 +35,7 @@
         </div>
         <button type="submit">Signup</button>
       </form>
-      <a href="http://localhost:8081/sign_up">I already have an account</a>
+      <inertia-link href="http://localhost:3000/sign_in">I already have an account</inertia-link>
     </div>
   </div>
 </template>

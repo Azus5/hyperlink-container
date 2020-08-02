@@ -3,4 +3,4 @@
 require_relative 'config/environment'
 
 run Rails.application
-Launchy.open("http://localhost:#{Rack::Server.new.options[:Port]}") if Rails.env.development?
+Launchy.open('http://localhost:3000') if Rails.env.development?

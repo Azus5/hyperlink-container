@@ -14,6 +14,9 @@ class Users::SessionsController < Devise::SessionsController
     return unless user.valid_password?(params[:user][:password])
 
     sign_in user
+    render json: {
+      logged: true
+    }
   end
 
   # DELETE /resource/sign_out
