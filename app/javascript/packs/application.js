@@ -12,9 +12,18 @@ import Vue from "vue/dist/vue.esm";
 import axios from "axios";
 import TurbolinksAdapter from "vue-turbolinks";
 import { InertiaApp } from "@inertiajs/inertia-vue";
-import '../../assets/stylesheets/global.css'
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import "../../assets/stylesheets/global.css";
+import "@fortawesome/fontawesome-free/js/all.js";
 Vue.use(TurbolinksAdapter);
 Vue.use(InertiaApp);
+
+library.add(faUserSecret);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 document.addEventListener("turbolinks:load", () => {
   const app_innertia = document.getElementById("app");
